@@ -9,8 +9,8 @@ on:
             - dev
     pull_request:
         branches: [main, dev]
-    schedule:
-     - cron: '*/1 * * * *'
+    #schedule:
+     #- cron: '*/1 * * * *'
 
 jobs:
     
@@ -27,6 +27,7 @@ jobs:
             - name: display readme file 
               run: cat README.md
     build_job:
+        needs: setup_job
         runs-on: windows-latest
         steps:
             - name: display hello
